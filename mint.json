@@ -47,7 +47,8 @@
     {
       "group": "Secure Links",
       "pages": [
-        "secure-links/intro"
+        "secure-links/intro",
+        "secure-links/why-flashview"
       ]
     }
   ],
