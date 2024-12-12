@@ -18,12 +18,12 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@flashview.link"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "FlashView",
+    "url": "https://flashview.link"
   },
   "tabs": [
     {
@@ -57,6 +57,12 @@
         "development"
       ]
     },
+    {
+      "group": "Secure Links",
+      "pages": [
+        "secure-links/intro"
+      ]
+    }
     {
       "group": "Essentials",
       "pages": [

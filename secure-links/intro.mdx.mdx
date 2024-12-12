@@ -1,0 +1,71 @@
+---
+title: "Secure Links - An Introduction"
+---
+
+## What is Secure Link?
+
+Secure Links are one-time, signed URLs designed for sharing sensitive information safely. Each link is accessible only once before it permanently disappears, ensuring your data stays confidential and isn’t left online.
+
+## How does it work?
+
+1. Create a secret message on FlashView.
+
+2. If you provide a password, an AES-256 key is securely derived from it. If no password was provided, a random 8-word passphrase is generated and then an AES-256 key is securely derived from it. Let's call it the **derivedKey**.
+
+3. The browser encrypts the message using the AES-256-GCM algorithm using the **derivedKey**.
+
+4. The encrypted message is then sent to the server along with the chosen expiry date, and email address of the recipient if provided (You can log in or create a free account, to enable the recipient address field). The unencrypted secret, the passphrase, or the **derivedKey** is not sent to the server at all.
+
+5. We provide you with a unique, signed, and time-sensitive link for the message. This makes sure a brute force attack does not load any information or an interface to retrieve the message. This is because our server will reject any request that was not signed by the server, making it impossible for anyone to guess a secret's link. The link also has an **expires\_at** parameter after which the link will not work at all.
+
+6. If the recipient's email address was provided, we send the link to the recipient. If not you can manually share the link to the recipient.
+
+7. You also share the passphrase you provided. If you didn't provide one, the automatically generated random 8-word passphrase must be shared with the recipient.
+
+8. The recipient opens the link before it expires and enters the passphrase.
+
+9. Once retrieved, the message is permanently deleted.
+
+<Warning>
+  **IMPORTANT:**
+
+
+
+  Both the link and the passphrase is required to retrieve the message.
+
+
+
+  The message is deleted regardless of whether the correct password was provided or not.
+
+
+
+  That is, the recipient get's only one chance to decrypt the message.
+</Warning>
+
+## Benefits
+
+* **One-Time Use**: Each link is single-use, ensuring it cannot be accessed by unauthorized parties.
+
+* **Automatic Destruction**: The content is permanently deleted after viewing, leaving no digital footprint.
+
+* **Secure Sharing**: Perfect for sharing passwords, private messages, or other sensitive information.
+
+* **Easy and Accessible**: Basic use requires no account, making it simple for everyone.
+
+* **End-to-end Encrypted:** No one, not even us, can see the message at any point.
+
+## Usecases
+
+From simple password sharing to confessing to your secret crush, the possibilities are unlimited. Please see our page on [Use Cases](https://flashview.link/use-cases) for detailed use cases.
+
+## Let's get started
+
+Well, just head on to [https://flashview.link](https://flashview.link) and follow the simple instructions on the website. It's as simple as that!
+
+<Tip>
+  When using the service as a guest (unauthenticated user), we limit the length of the message, and limit the number of messages that can be sent per hour and per day.
+
+
+
+  f you need a longer message length, expiry, or additional features, you just need to log in or create a free account!
+</Tip>
